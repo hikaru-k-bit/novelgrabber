@@ -64,27 +64,34 @@ public class UI {
     }
 
     private AnchorPane createAutomaticContent() {
+        // Создание корневого элемента для содержимого вкладки "Automatic"
         AnchorPane automaticContent = new AnchorPane();
         automaticContent.setPrefWidth(200);
         automaticContent.setPrefHeight(180);
 
+        // Создание горизонтального контейнера
         HBox hbox = new HBox();
         hbox.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
         hbox.setPrefWidth(694);
         hbox.setPrefHeight(100);
         hbox.setStyle("-fx-border-color: #f4cc94; -fx-border-width: 5px;");
 
+        // Создание элементов ввода ссылки на новеллу
         Label label = new Label("Novel URL");
         TextField textField = new TextField();
 
+        // Установка отступов для горизонтального контейнера
         HBox.setMargin(label, new Insets(0, 0, 0, 10));
         HBox.setMargin(textField, new Insets(0, 0, 0, 10));
 
+        // Добавление подписи и текстого поля в горизонтальный контейнер
         hbox.getChildren().addAll(label, textField);
 
+        // Настройка корневого контейнера TODO: разобраться, как эта штука работает, полностью!
         AnchorPane.setTopAnchor(hbox, 27.0);
         AnchorPane.setLeftAnchor(hbox, 25.0);
 
+        // Добавление горизонтального контейнера в корневой
         automaticContent.getChildren().add(hbox);
 
         return automaticContent;
